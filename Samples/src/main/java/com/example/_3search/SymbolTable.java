@@ -7,6 +7,9 @@ import java.util.TreeMap;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+/**
+ * ordered symbol table
+ */
 public class SymbolTable<Key extends Comparable<Key>, Value> implements Iterable<Key> {
 
     private TreeMap<Key, Value> st;
@@ -15,34 +18,34 @@ public class SymbolTable<Key extends Comparable<Key>, Value> implements Iterable
         st = new TreeMap<Key, Value>();
     }
 
-    void put(Key key, Value value) {
+    public void put(Key key, Value value) {
         if (key == null) throw new NullPointerException("null key");
         if (value == null) st.remove(key);
         else st.put(key, value);
     }
 
-    Value get(Key key) {
+    public Value get(Key key) {
         return st.get(key);
     }
 
 
-    void delete(Key key) {
+    public void delete(Key key) {
         st.remove(key);
     }
 
-    boolean contains(Key key) {
+    public boolean contains(Key key) {
         return st.containsKey(key);
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return st.isEmpty();
     }
 
-    int size() {
+    public int size() {
         return st.size();
     }
 
-    Iterable<Key> keys() {
+    public Iterable<Key> keys() {
         return st.keySet();
     }
 

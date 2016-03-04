@@ -1,0 +1,53 @@
+package com.example._4graphs;
+
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
+
+/**
+ * 给定图是否有环
+ * Created by gaosheng on 16-3-4.
+ */
+public class Cycle {
+
+    private boolean[] marked;
+    private boolean hasCycle;
+
+    public Cycle(Graph g) {
+        marked = new boolean[g.V()];
+        for (int s = 0; s < g.V(); s++) {
+            if (!marked[s])
+                dfs(g, s, -1);
+        }
+    }
+
+    /**
+     *
+     * @param g graph
+     * @param v 当前结点
+     * @param d 父节点
+     */
+    private void dfs(Graph g, int v, int d) {
+        marked[v] = true;
+        for (Integer w : g.adj(v)) {
+            if (!marked[w])
+                dfs(g, w, v);
+            else if (w != d)
+                hasCycle = true;
+        }
+    }
+
+    public boolean hasCycle() {
+        return hasCycle;
+    }
+
+    public static void main(String[] args){
+        In in = new In(args[0]);
+        Graph G = new Graph(in);
+        int s = Integer.parseInt(args[1]);
+        Cycle cycle = new Cycle(G);
+        cycle.hasCycle();
+        StdOut.print(cycle.hasCycle()?"Graph is cyclic":"Graph is acyclic");
+
+    }
+
+}
