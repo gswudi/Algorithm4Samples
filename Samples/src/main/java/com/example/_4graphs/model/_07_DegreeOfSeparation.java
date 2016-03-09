@@ -1,16 +1,17 @@
-package com.example._4graphs;
+package com.example._4graphs.model;
 
+import com.example._4graphs._4_2_BreadthFirstPaths;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 /**
  * Created by gaosheng on 16-3-4.
  */
-public class DegreeOfSeparation {
+public class _07_DegreeOfSeparation {
 
     public static void main(String[] args) {
-        SymbolGraph sg = new SymbolGraph(args[0],args[1]);
-        Graph g= sg.g();
+        _05_SymbolGraph sg = new _05_SymbolGraph(args[0],args[1]);
+        _01_Graph g= sg.g();
 
         String source = args[2];
         if(!sg.contains(source)){

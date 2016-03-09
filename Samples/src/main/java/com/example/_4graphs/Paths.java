@@ -1,11 +1,13 @@
 package com.example._4graphs;
 
+import com.example._4graphs.model._01_Graph;
+
 /**
  * Created by gaosheng on 16-3-4.
  */
 public abstract class Paths {
 
-    public Paths(Graph g, int s) {
+    public Paths(_01_Graph g, int s) {
     }
 
     /**

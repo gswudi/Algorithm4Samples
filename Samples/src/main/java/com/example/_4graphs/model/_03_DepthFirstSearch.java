@@ -1,4 +1,4 @@
-package com.example._4graphs;
+package com.example._4graphs.model;
 
 
 import edu.princeton.cs.algs4.In;
@@ -7,16 +7,16 @@ import edu.princeton.cs.algs4.StdOut;
 /**
  * Created by gaosheng on 16-3-3.
  */
-public class DepthFirstSearch {
+public class _03_DepthFirstSearch {
     private boolean[] marked;
     private int count;
 
-    public DepthFirstSearch(Graph g, int s) {
+    public _03_DepthFirstSearch(_01_Graph g, int s) {
         marked = new boolean[g.V()];
         dfs(g, s);
     }
 
-    private void dfs(Graph g, int v) {
+    private void dfs(_01_Graph g, int v) {
         marked[v] = true;
         count++;
         for (Integer w : g.adj(v)) {
@@ -36,9 +36,9 @@ public class DepthFirstSearch {
 
     public static void main(String[] args) {
         In in = new In(args[0]);
-        Graph G = new Graph(in);
+        _01_Graph G = new _01_Graph(in);
         int s = Integer.parseInt(args[1]);
-        DepthFirstSearch search = new DepthFirstSearch(G, s);
+        _03_DepthFirstSearch search = new _03_DepthFirstSearch(G, s);
         for (int v = 0; v < G.V(); v++) {
             if (search.marked(v))
                 StdOut.print(v + " ");

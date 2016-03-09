@@ -2,3 +2,5 @@
 /Samples/Samples.iml
 /Algorithm.iml
 # Created by .ignore support plugin (hsz.mobi)
+/Samples/build
+/Samples/res/largeDG.txt

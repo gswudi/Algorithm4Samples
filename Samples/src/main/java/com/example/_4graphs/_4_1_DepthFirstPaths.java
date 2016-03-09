@@ -1,5 +1,6 @@
 package com.example._4graphs;
 
+import com.example._4graphs.model._01_Graph;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdOut;
@@ -20,7 +21,7 @@ public class _4_1_DepthFirstPaths extends Paths {
      * @param g graph
      * @param s source of graph
      */
-    public _4_1_DepthFirstPaths(Graph g, int s) {
+    public _4_1_DepthFirstPaths(_01_Graph g, int s) {
         super(g, s);
         marked = new boolean[g.V()];
         edgeTo = new int[g.V()];
@@ -28,7 +29,7 @@ public class _4_1_DepthFirstPaths extends Paths {
         dfs(g, s);
     }
 
-    private void dfs(Graph g, int v) {
+    private void dfs(_01_Graph g, int v) {
         marked[v] = true;
         for (Integer w : g.adj(v)) {
             if (!marked[w]) {
@@ -61,7 +62,7 @@ public class _4_1_DepthFirstPaths extends Paths {
      */
     public static void main(String[] args) {
         In in = new In(args[0]);
-        Graph G = new Graph(in);
+        _01_Graph G = new _01_Graph(in);
         int s = Integer.parseInt(args[1]);
         _4_1_DepthFirstPaths dfs = new _4_1_DepthFirstPaths(G, s);
         for (int v = 0; v < G.V(); v++) {

@@ -1,5 +1,6 @@
 package com.example._4graphs;
 
+import com.example._4graphs.model._01_Graph;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.Stack;
@@ -15,7 +16,7 @@ public class _4_2_BreadthFirstPaths extends Paths {
     private final int s;
 
 
-    public _4_2_BreadthFirstPaths(Graph g, int s) {
+    public _4_2_BreadthFirstPaths(_01_Graph g, int s) {
         super(g, s);
         marked = new boolean[g.V()];
         edgeTo = new int[g.V()];
@@ -23,7 +24,7 @@ public class _4_2_BreadthFirstPaths extends Paths {
         bfs(g,s);
     }
 
-    private void bfs(Graph g, int s) {
+    private void bfs(_01_Graph g, int s) {
         Queue<Integer> queue = new Queue<>();
         marked[s] = true;
         queue.enqueue(s);
@@ -61,7 +62,7 @@ public class _4_2_BreadthFirstPaths extends Paths {
 
     public static void main(String[] args) {
         In in = new In(args[0]);
-        Graph G = new Graph(in);
+        _01_Graph G = new _01_Graph(in);
         int s = Integer.parseInt(args[1]);
         _4_2_BreadthFirstPaths bfs = new _4_2_BreadthFirstPaths(G, s);
         for (int v = 0; v < G.V(); v++) {

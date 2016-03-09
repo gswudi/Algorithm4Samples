@@ -1,4 +1,4 @@
-package com.example._4graphs;
+package com.example._4graphs.model;
 
 import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.In;
@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.In;
  * 邻接表实现Graph
  * Created by gaosheng on 16-3-3.
  */
-public class Graph {
+public class _01_Graph {
 
     private int V;  //vertex count
     private int E;  //edge count
@@ -21,7 +21,7 @@ public class Graph {
         return E;
     }
 
-    public Graph(int V) {
+    public _01_Graph(int V) {
         this.V = V;
         this.E = 0;
         adj = (Bag<Integer>[]) new Bag[V];
@@ -30,7 +30,7 @@ public class Graph {
         }
     }
 
-    public Graph(In in) {
+    public _01_Graph(In in) {
         this(in.readInt());
         int E = in.readInt();
         for (int i = 0; i < E; i++) {

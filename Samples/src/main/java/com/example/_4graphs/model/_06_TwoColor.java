@@ -1,16 +1,16 @@
-package com.example._4graphs;
+package com.example._4graphs.model;
 
 /**
  * 判断graph是否为二分图
  * Created by gaosheng on 16-3-4.
  */
-public class TwoColor {
+public class _06_TwoColor {
 
     private boolean[] marked;
     private boolean[] color;
     private boolean isTwoColor = true;
 
-    public TwoColor(Graph g) {
+    public _06_TwoColor(_01_Graph g) {
         marked = new boolean[g.V()];
         color = new boolean[g.V()];
         for (int i = 0; i < g.V(); i++) {
@@ -19,7 +19,7 @@ public class TwoColor {
         }
     }
 
-    private void dfs(Graph g, int v) {
+    private void dfs(_01_Graph g, int v) {
         marked[v] = true;
         for (Integer w : g.adj(v)) {
             if (!marked[w]) {

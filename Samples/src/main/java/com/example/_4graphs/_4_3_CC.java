@@ -1,5 +1,6 @@
 package com.example._4graphs;
 
+import com.example._4graphs.model._01_Graph;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdOut;
@@ -8,13 +9,13 @@ import edu.princeton.cs.algs4.StdOut;
  * connected components 连通分量
  * Created by gaosheng on 16-3-4.
  */
-public class CC {
+public class _4_3_CC {
 
     private boolean[] marked;
     private int[] id;       //记录该结点所属连通分量的id
     private int count;      //连通分量数
 
-    public CC(Graph g) {
+    public _4_3_CC(_01_Graph g) {
         marked = new boolean[g.V()];
         id = new int[g.V()];
         for (int s = 0; s < g.V(); s++) {
@@ -25,7 +26,7 @@ public class CC {
         }
     }
 
-    private void dfs(Graph g, int v) {
+    private void dfs(_01_Graph g, int v) {
         marked[v] = true;
         id[v] = count;
         for (Integer w : g.adj(v)) {
@@ -48,8 +49,8 @@ public class CC {
 
     public static void main(String[] args) {
         In in = new In(args[0]);
-        Graph G = new Graph(in);
-        CC cc = new CC(G);
+        _01_Graph G = new _01_Graph(in);
+        _4_3_CC cc = new _4_3_CC(G);
 
         // number of connected components
         int M = cc.count();

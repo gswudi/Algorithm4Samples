@@ -1,4 +1,4 @@
-package com.example._4graphs;
+package com.example._4graphs.model;
 
 import com.example._3search.SymbolTable;
 import edu.princeton.cs.algs4.In;
@@ -7,13 +7,13 @@ import edu.princeton.cs.algs4.In;
  * 符号图(顶点用字符串表示)
  * Created by gaosheng on 16-3-4.
  */
-public class SymbolGraph {
+public class _05_SymbolGraph {
 
     private SymbolTable<String, Integer> st;
     private String[] keys;
-    private Graph g;
+    private _01_Graph g;
 
-    public SymbolGraph(String stream, String sp) {
+    public _05_SymbolGraph(String stream, String sp) {
         st = new SymbolTable<>();
         In in = new In(stream);
         while (in.hasNextLine()) {
@@ -28,7 +28,7 @@ public class SymbolGraph {
         for (String name : st.keys()) {
             keys[st.get(name)] = name;
         }
-        g = new Graph(st.size());
+        g = new _01_Graph(st.size());
         in = new In(stream);
         while (in.hasNextLine()) {
             String[] a = in.readLine().split(sp);
@@ -51,7 +51,7 @@ public class SymbolGraph {
         return keys[v];
     }
 
-    public Graph g() {
+    public _01_Graph g() {
         return g;
     }
 
