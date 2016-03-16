@@ -14,7 +14,7 @@ public class _16_EdgeWeightedDirectedCycle {
     private Stack<_14_DirectedEdge> cycle;
 
 
-    public _16_EdgeWeightedDirectedCycle(_15_EdgeWeightedDiagraph g) {
+    public _16_EdgeWeightedDirectedCycle(_15_EdgeWeightedDigraph g) {
         marked = new boolean[g.V()];
         onStack = new boolean[g.V()];
         edgeTo = new _14_DirectedEdge[g.V()];
@@ -24,7 +24,7 @@ public class _16_EdgeWeightedDirectedCycle {
         }
     }
 
-    private void dfs(_15_EdgeWeightedDiagraph g, int v) {
+    private void dfs(_15_EdgeWeightedDigraph g, int v) {
         onStack[v] = true;
         marked[v] = true;
         for (_14_DirectedEdge e : g.adj(v)) {

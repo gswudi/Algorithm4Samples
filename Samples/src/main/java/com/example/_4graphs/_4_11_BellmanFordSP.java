@@ -1,7 +1,7 @@
 package com.example._4graphs;
 
 import com.example._4graphs.model._14_DirectedEdge;
-import com.example._4graphs.model._15_EdgeWeightedDiagraph;
+import com.example._4graphs.model._15_EdgeWeightedDigraph;
 import com.example._4graphs.model._16_EdgeWeightedDirectedCycle;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.Stack;
@@ -18,7 +18,7 @@ public class _4_11_BellmanFordSP {
     private int cost;   //relax()调用的次数
     private Iterable<_14_DirectedEdge> cycle;   //edgeTo[]中是否有负权重环
 
-    public _4_11_BellmanFordSP(_15_EdgeWeightedDiagraph g, int s) {
+    public _4_11_BellmanFordSP(_15_EdgeWeightedDigraph g, int s) {
         distTo = new double[g.V()];
         edgeTo = new _14_DirectedEdge[g.V()];
         onQ = new boolean[g.V()];
@@ -38,7 +38,7 @@ public class _4_11_BellmanFordSP {
 
     }
 
-    private void relax(_15_EdgeWeightedDiagraph g, int v) {
+    private void relax(_15_EdgeWeightedDigraph g, int v) {
         for (_14_DirectedEdge e : g.adj(v)) {
             int w = e.to();
             if (distTo[w] > distTo[v] + e.weight()) {
@@ -56,7 +56,7 @@ public class _4_11_BellmanFordSP {
 
     private void findNegativeCycle() {
         int V = edgeTo.length;
-        _15_EdgeWeightedDiagraph spt = new _15_EdgeWeightedDiagraph(V);
+        _15_EdgeWeightedDigraph spt = new _15_EdgeWeightedDigraph(V);
         for (int v = 0; v < V; v++) {
             if(edgeTo[v]!=null){
                 spt.addEdge(edgeTo[v]);

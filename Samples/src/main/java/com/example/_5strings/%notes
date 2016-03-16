@@ -11,3 +11,6 @@ MSD高位优先排序
         每次调用sort方法都会创建一个count[]数组
     解决方法:
              private static void sort(String[] a, int lo, int hi, int d) {
+3-way string quick sort三向字符串快速排序
+    MSD和quick sort的结合
+    使用首字母将数据切分为"小于","等于","大于"的三个子数组,递归的切分子数组(在等于的子数组中忽略首字母)
