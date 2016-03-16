@@ -6,13 +6,13 @@ import edu.princeton.cs.algs4.In;
 /**
  * Created by gaosheng on 16-3-11.
  */
-public class _15_EdgeWeightedDiagraph {
+public class _15_EdgeWeightedDigraph {
 
     private final int V;
     private int E;
     private Bag<_14_DirectedEdge>[] adj;
 
-    public _15_EdgeWeightedDiagraph(int V) {
+    public _15_EdgeWeightedDigraph(int V) {
         this.V = V;
         this.E = 0;
         adj = new Bag[V];
@@ -21,7 +21,7 @@ public class _15_EdgeWeightedDiagraph {
         }
     }
 
-    public _15_EdgeWeightedDiagraph(In in) {
+    public _15_EdgeWeightedDigraph(In in) {
         this(in.readInt());
         int E = in.readInt();
         for (int i = 0; i < E; i++) {

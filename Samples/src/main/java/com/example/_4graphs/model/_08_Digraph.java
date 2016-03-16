@@ -11,8 +11,8 @@ import edu.princeton.cs.algs4.StdOut;
  */
 public class _08_Digraph {
 
-    private final int V;
-    private int E;
+    protected final int V;
+    protected int E;
     private Bag<Integer>[] adj;
     private static final String NEWLINE = System.getProperty("line.separator");
 
